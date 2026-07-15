@@ -15,4 +15,13 @@ cask "team-os" do
     system_command "/usr/bin/xattr",
                    args: ["-dr", "com.apple.quarantine", "#{appdir}/Team OS.app"]
   end
+
+  zap trash: [
+    "~/Library/Application Support/TeamOS",
+    "~/Library/Caches/studio.aisquare.teamos",
+    "~/Library/HTTPStorages/studio.aisquare.teamos",
+    "~/Library/Preferences/studio.aisquare.teamos.plist",
+    "~/Library/Saved Application State/studio.aisquare.teamos.savedState",
+    "~/Library/WebKit/studio.aisquare.teamos",
+  ]
 end
