@@ -26,8 +26,15 @@ curl -fsSL https://raw.githubusercontent.com/AISquare-PrincePal/homebrew-teamos/
 
 [![Download Team OS](https://img.shields.io/badge/Download-Team%20OS%20(.dmg)-2563eb?style=for-the-badge&logo=apple&logoColor=white)](https://github.com/AISquare-PrincePal/homebrew-teamos/releases/latest/download/Team-OS-macos-arm64.dmg)
 
-Drag **Team OS** to Applications. The build is ad-hoc signed (not yet notarized), so the
-first launch needs a **right-click → Open** once. (Homebrew and the one-liner clear this for
-you automatically.)
+Drag **Team OS** to Applications. The build is ad-hoc signed (not yet notarized), so macOS
+Gatekeeper will say **"Team OS is damaged and can't be opened"** on a downloaded copy. It is
+not actually damaged, just quarantined. Clear it once in Terminal:
+
+```sh
+xattr -dr com.apple.quarantine "/Applications/Team OS.app"
+```
+
+Then it opens normally. (Homebrew and the one-liner do this for you automatically, so prefer
+them.)
 
 > Apple Silicon (M-series) only for now. Intel support is a planned follow-up.
