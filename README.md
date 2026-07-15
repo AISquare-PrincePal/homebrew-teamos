@@ -14,6 +14,14 @@ brew tap AISquare-PrincePal/teamos
 brew install --cask team-os
 ```
 
+On Homebrew 6+, the first install may say the tap is "untrusted" (the cask runs a step to
+clear the Gatekeeper quarantine). If so, trust it once and re-run:
+
+```sh
+brew trust --cask aisquare-princepal/teamos/team-os
+brew install --cask team-os
+```
+
 Update later with `brew upgrade --cask team-os`.
 
 ### One-line install
