@@ -56,6 +56,34 @@ them.)
 
 > Apple Silicon (M-series) only for now. Intel support is a planned follow-up.
 
+## First run — what to do
+
+1. **Open Team OS.** It checks for your Claude sign-in:
+   - If you already have **Claude Code** installed and signed in, the app picks up that session
+     automatically and shows your name — nothing to do.
+   - If not, it walks you through a couple of in-app steps: install the engine and
+     **Sign in with Claude** (uses your existing Claude subscription — no API key, no terminal).
+2. **Connect your tools.** Open **Connectors** and connect Gmail, Google Calendar, Google Drive,
+   and Slack (these open Claude's connector page), then click **Connect** on **GitHub** and sign in
+   with your work GitHub account. GitHub is what lets the app load the shared team brain.
+3. **Your local brain builds itself.** Once GitHub is connected, the app **automatically** downloads
+   the shared team knowledge and builds your local brain the first time it needs it — you don't have
+   to do anything. If it hasn't appeared, open **Connectors** and click **"Load team brain"** to
+   trigger it. When it's ready the card shows **"Loaded — N facts."**
+4. **Gather.** Click **Gather** to pull what's new from your connected tools into your brain as
+   private facts. Now the board, triage, and chat have data to work with.
+
+## Where your data lives
+
+Everything stays **local to your Mac**, under `~/Library/Application Support/TeamOS/`:
+
+- `brain.db` — your local brain (SQLite): shared facts + your private facts + the company-docs index.
+- `team-os/` — the shared knowledge repo the brain is built from (fetched automatically).
+
+Your **private facts never leave your machine.** Only items you explicitly approve through the Share
+gate are pushed to the team's GitHub repo. Deleting that folder just makes the app rebuild the brain
+on next launch (you'd only lose local-only private facts and chat history).
+
 ## Uninstall
 
 Match the method you installed with. Your Claude sign-in (`~/.claude`) is shared with Claude
