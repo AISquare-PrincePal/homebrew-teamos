@@ -1,19 +1,19 @@
 cask "team-os" do
-  version "0.2.3"
-  sha256 "b183930a7642bcbd8a5af2baf408396be3326d4dfde95a0c99bf20a29b1cd666"
+  version "0.2.4"
+  sha256 "2458d91801fded35c962d708eb756aa5fc28526d976de15f3c0e8c24b6369f7a"
 
   url "https://github.com/AISquare-PrincePal/homebrew-teamos/releases/download/app-v#{version}/Team-OS_#{version}_aarch64.dmg"
-  name "Team OS"
-  desc "AISquare Team OS desktop app"
+  name "TeamSquare"
+  desc "AISquare TeamSquare desktop app"
   homepage "https://github.com/AISquare-PrincePal/homebrew-teamos"
 
   depends_on arch: :arm64
 
-  app "Team OS.app"
+  app "TeamSquare.app"
 
   postflight do
     system_command "/usr/bin/xattr",
-                   args: ["-dr", "com.apple.quarantine", "#{appdir}/Team OS.app"]
+                   args: ["-dr", "com.apple.quarantine", "#{appdir}/TeamSquare.app"]
   end
 
   zap trash: [
