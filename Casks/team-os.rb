@@ -1,6 +1,6 @@
 cask "team-os" do
-  version "0.2.6"
-  sha256 "46056b46e21f107f97a3a65a208e5b1a7d9eab8dd13513978776c7c970127f3b"
+  version "0.2.7"
+  sha256 "7b40eee3363be98814622372d64d60442dd9f5c0672131af871e8f7c91d51dc7"
 
   url "https://github.com/AISquare-PrincePal/homebrew-teamos/releases/download/app-v#{version}/Team-OS_#{version}_aarch64.dmg"
   name "TeamSquare"
