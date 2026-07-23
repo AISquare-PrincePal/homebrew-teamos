@@ -48,7 +48,7 @@ Gatekeeper will say **"Team OS is damaged and can't be opened"** on a downloaded
 not actually damaged, just quarantined. Clear it once in Terminal:
 
 ```sh
-xattr -dr com.apple.quarantine "/Applications/Team OS.app"
+xattr -dr com.apple.quarantine "/Applications/TeamSquare.app"
 ```
 
 Then it opens normally. (Homebrew and the one-liner do this for you automatically, so prefer
