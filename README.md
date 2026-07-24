@@ -43,12 +43,13 @@ curl -fsSL https://raw.githubusercontent.com/AISquare-PrincePal/homebrew-teamos/
 
 [![Download Team OS](https://img.shields.io/badge/Download-Team%20OS%20(.dmg)-2563eb?style=for-the-badge&logo=apple&logoColor=white)](https://github.com/AISquare-PrincePal/homebrew-teamos/releases/latest/download/Team-OS-macos-arm64.dmg)
 
-Drag **Team OS** to Applications. The build is ad-hoc signed (not yet notarized), so macOS
-Gatekeeper will say **"Team OS is damaged and can't be opened"** on a downloaded copy. It is
-not actually damaged, just quarantined. Clear it once in Terminal:
+Drag the app to Applications. The build is ad-hoc signed (not yet notarized), so macOS
+Gatekeeper will say the app **"is damaged and can't be opened"** on a downloaded copy. It is
+not actually damaged, just quarantined. Clear it once in Terminal (this resolves the app by
+its id, so it works whatever the app is named):
 
 ```sh
-xattr -dr com.apple.quarantine "/Applications/TeamSquare.app"
+xattr -dr com.apple.quarantine "$(mdfind "kMDItemCFBundleIdentifier == 'studio.aisquare.teamos'" | grep '^/Applications/' | head -1)"
 ```
 
 Then it opens normally. (Homebrew and the one-liner do this for you automatically, so prefer
